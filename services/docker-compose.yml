@@ -1,0 +1,14 @@
+services:
+  fe_svc:
+    build:
+      dockerfile: fe_svc/Dockerfile
+      context: fe_svc
+    ports:
+      - 8501:8501
+
+  chat_svc:
+    build:
+      dockerfile: chat_svc/Dockerfile
+      context: chat_svc
+    ports:
+      - 8081:8081
