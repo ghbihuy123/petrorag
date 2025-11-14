@@ -1,14 +1,20 @@
 services:
   fe_svc:
-    build:
-      dockerfile: fe_svc/Dockerfile
-      context: fe_svc
+    image: ghbihuy123/petrorag_fe:latest
+    # build:
+    #   dockerfile: ./fe_svc/Dockerfile
+    #   context: ./fe_svc
     ports:
       - 8501:8501
+    env_file:
+      - .env
 
   chat_svc:
-    build:
-      dockerfile: chat_svc/Dockerfile
-      context: chat_svc
+    image: ghbihuy123/petrorag_chat:latest
+    # build:
+    #   dockerfile: ./chat_svc/Dockerfile
+    #   context: ./chat_svc
     ports:
       - 8081:8081
+    env_file:
+      - .env
