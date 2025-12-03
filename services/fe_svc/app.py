@@ -2,11 +2,12 @@ import streamlit as st
 import requests
 import json
 from fe_svc.settings import common_settings
+from fe_svc.global_css import sidebar_css
 
 st.set_page_config(page_title="Q&A Assistant", layout="wide")
 
-st.title("❓ Question & Answer Assistant")
-st.write("Ask me anything about object types and get instant answers!")
+st.title("❓ Chatbot hỏi đáp SAP-PM TKNB")
+st.write("Hỏi tôi bất cứ câu hỏi nào bạn muốn về hệ thống Quản lý kỹ thuật Petrolimex!")
 
 # FastAPI backend URL
 CHAT_ENDPOINT = common_settings.chat_endpoint
@@ -29,7 +30,7 @@ if st.session_state.error:
     st.session_state.error = None
 
 # Input field for user question
-user_input = st.chat_input("Type your question here...")
+user_input = st.chat_input("Nhập câu hỏi ở đây...")
 
 if user_input:
     # Add user message to history
@@ -80,15 +81,16 @@ if user_input:
 
 # Sidebar with options
 with st.sidebar:
-    st.header("⚙️ Settings")
+    st.image("fe_svc/public/petrologo.png", width=150) 
+    # st.header("⚙️ Settings")
     
     st.divider()
     
-    if st.button("🗑️ Clear Chat History"):
-        st.session_state.messages = []
-        st.rerun()
+    # if st.button("🗑️ Clear Chat History"):
+    #     st.session_state.messages = []
+    #     st.rerun()
     
-    st.divider()
+    # st.divider()
     
     example_queries = [
         "tìm cho tôi mã object type của máy nén khí",
