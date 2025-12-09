@@ -12,7 +12,7 @@ sidebar_css = local_css("""
 
 /* Sidebar text color */
 [data-testid="stSidebar"] * {
-    color: #ffffff !important;
+    color: #2F5FA9 !important;
 }
 
 /* Buttons inside sidebar */

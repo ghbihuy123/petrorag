@@ -7,7 +7,7 @@ from fe_svc.global_css import sidebar_css
 st.set_page_config(page_title="Q&A Assistant", layout="wide")
 
 st.title("❓ Chatbot hỏi đáp SAP-PM TKNB")
-st.write("Hỏi tôi bất cứ câu hỏi nào bạn muốn về hệ thống Quản lý kỹ thuật Petrolimex!")
+st.write("Hỏi tôi bất cứ câu hỏi nào về phần mềm SAP-PM!")
 
 # FastAPI backend URL
 CHAT_ENDPOINT = common_settings.chat_endpoint
@@ -93,7 +93,7 @@ with st.sidebar:
     # st.divider()
     
     example_queries = [
-        "tìm cho tôi mã object type của máy nén khí",
+        "Tìm cho tôi mã object type của máy nén khí",
     ]
     
     for query in example_queries:

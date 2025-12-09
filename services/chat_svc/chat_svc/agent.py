@@ -2,6 +2,7 @@ import os
 from langchain.agents import create_agent
 from langchain_openai import ChatOpenAI
 from chat_svc.tools.find_object_info import find_object_info
+from chat_svc.tools.find_common_question import list_all_questions, get_answers_for_question 
 from chat_svc.settings import common_config
 
 os.environ['OPENAI_API_KEY'] = common_config.openai_key
@@ -13,7 +14,12 @@ llm = ChatOpenAI(
 )
 
 # Define tools
-tools = [find_object_info]
+tools = [
+    find_object_info,
+    # Relate to common questions about SAP-PM
+    get_answers_for_question,
+    list_all_questions,
+]
 
 # Create the agent
 agent = create_agent(
