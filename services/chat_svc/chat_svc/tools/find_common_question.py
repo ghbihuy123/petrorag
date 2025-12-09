@@ -1,7 +1,8 @@
 import pandas as pd
 from langchain.tools import tool
+from chat_svc.settings import common_config
 
-FILE_PATH = "/home/luu-quang-huy/project/chatpetro/services/chat_svc/chat_svc/data/common_question.xlsx"
+FILE_PATH = common_config.common_question_db_path
 
 def load_and_prepare_df():
     df = pd.read_excel(FILE_PATH)

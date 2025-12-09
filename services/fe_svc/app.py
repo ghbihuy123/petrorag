@@ -2,9 +2,9 @@ import streamlit as st
 import requests
 import json
 from fe_svc.settings import common_settings
-from fe_svc.global_css import sidebar_css
-
 st.set_page_config(page_title="Q&A Assistant", layout="wide")
+
+from fe_svc.global_css import sidebar_css
 
 st.title("❓ Chatbot hỏi đáp SAP-PM TKNB")
 st.write("Hỏi tôi bất cứ câu hỏi nào về phần mềm SAP-PM!")
@@ -33,6 +33,7 @@ if st.session_state.error:
 user_input = st.chat_input("Nhập câu hỏi ở đây...")
 
 if user_input:
+    sidebar_css = sidebar_css
     # Add user message to history
     st.session_state.messages.append({"role": "user", "content": user_input})
     
@@ -94,6 +95,8 @@ with st.sidebar:
     
     example_queries = [
         "Tìm cho tôi mã object type của máy nén khí",
+        "Thuật ngữ trong SAP-PM",
+        "Tổng hợp t-code trong SAP-PM"
     ]
     
     for query in example_queries:
